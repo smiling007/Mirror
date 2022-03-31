@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Victory Menu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Kenney Rocket.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Images/return.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Images/home.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Images/arrowRight.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[node name="Victory Menu" type="PopupMenu"]
+margin_left = -22.0
+margin_top = 280.0
+margin_right = -2.0
+margin_bottom = 300.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Home" type="Button" parent="."]
+margin_left = 263.0
+margin_right = 391.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 2 )
+text = "Home"
+icon = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Retry" type="Button" parent="."]
+margin_left = 395.0
+margin_right = 539.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 3 )
+text = "Retry"
+icon = ExtResource( 3 )
+
+[node name="Next Level" type="Button" parent="."]
+margin_left = 543.0
+margin_right = 757.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 4 )
+text = "Next Level"
+icon = ExtResource( 5 )
+
+[node name="Victory" type="RichTextLabel" parent="."]
+margin_left = 761.0
+margin_right = 761.0
+margin_bottom = 56.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "YOU WON"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Home" to="." method="_on_Home_pressed"]
+[connection signal="pressed" from="Retry" to="." method="_on_Retry_pressed"]
+[connection signal="pressed" from="Next Level" to="." method="_on_Next_Level_pressed"]

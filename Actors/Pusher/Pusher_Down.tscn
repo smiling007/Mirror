@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Actors/Pusher/Pusher_Down.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Images/Arrow_down.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Audio/Push.tscn" type="PackedScene" id=3]
+
+[node name="Pusher_Down" type="Sprite"]
+texture = ExtResource( 2 )
+centered = false
+script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2( 32, 32 )
+scale = Vector2( 0.01, 0.01 )
+polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+
+[node name="Push" parent="." instance=ExtResource( 3 )]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

@@ -1,0 +1,49 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scenes/TileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Audio/Game Track.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Actors/Pusher/Pusher_Down.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Background.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Moves Left.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Actors/Hero.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Actors/Sword.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Actors/Enemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Actors/Pusher/Pusher_Left.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Actors/Pusher/Pusher_Up.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scripts/Levels/Level 8.gd" type="Script" id=11]
+
+[node name="Level 8" type="Node2D"]
+script = ExtResource( 11 )
+
+[node name="Background" parent="." instance=ExtResource( 4 )]
+position = Vector2( 0, -1 )
+
+[node name="TileMap" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 14, 1, 0, 15, 1, 0, 65536, 0, 0, 65551, 1, 0, 131072, 0, 0, 131087, 1, 0, 196608, 0, 0, 196623, 1, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262159, 1, 0, 327680, 0, 0, 327695, 1, 0, 393216, 0, 0, 393231, 1, 0, 458752, 0, 0, 458767, 1, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 1, 0, 524303, 1, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 1, 0, 589833, 1, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589839, 1, 0 )
+
+[node name="Hero" parent="." instance=ExtResource( 6 )]
+position = Vector2( 64, 448 )
+scale = Vector2( 1, 1 )
+
+[node name="Enemy" parent="." instance=ExtResource( 8 )]
+position = Vector2( 64, 361 )
+scale = Vector2( 1, 1 )
+
+[node name="Sword" parent="." instance=ExtResource( 7 )]
+position = Vector2( 64, 64 )
+
+[node name="Moves Left" parent="." instance=ExtResource( 5 )]
+
+[node name="Game Track" parent="." instance=ExtResource( 2 )]
+
+[node name="Pusher_Down" parent="." instance=ExtResource( 3 )]
+position = Vector2( 483, 62 )
+
+[node name="Pusher_Left" parent="." instance=ExtResource( 9 )]
+position = Vector2( 482, 246 )
+
+[node name="Pusher_Left2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 898, 64 )
+
+[node name="Pusher_Up" parent="." instance=ExtResource( 10 )]
+position = Vector2( 896, 450 )

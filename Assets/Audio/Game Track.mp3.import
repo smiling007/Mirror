@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Game Track.mp3-81980338cac54debe5a03219cd317851.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Game Track.mp3"
+dest_files=[ "res://.import/Game Track.mp3-81980338cac54debe5a03219cd317851.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

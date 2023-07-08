@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Actors/Pusher/Pusher_Right.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Images/Arrow_right.png" type="Texture" id=2]
+
+[node name="Pusher_Right" type="Sprite"]
+texture = ExtResource( 2 )
+centered = false
+script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2( 32, 32 )
+scale = Vector2( 0.01, 0.01 )
+polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
